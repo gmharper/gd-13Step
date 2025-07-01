@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsew0gujmey2b"]
+
+[ext_resource type="Script" uid="uid://bjmveqv4ar60f" path="res://src/scripts/tile_panel.gd" id="1_g52xu"]
+[ext_resource type="PackedScene" uid="uid://bxk0rh0s1wb4b" path="res://src/scenes/Tiles/TileSelect.tscn" id="2_g52xu"]
+[ext_resource type="Theme" uid="uid://bk6ddf3xr8ux2" path="res://src/theme/Default.tres" id="3_hd6iy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ypre"]
+bg_color = Color(0.11798, 0.11798, 0.11798, 1)
+anti_aliasing_size = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knld6"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing_size = 0.3
+
+[node name="TilePanel" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ypre")
+script = ExtResource("1_g52xu")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="SelectTiles" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SelectSingle" parent="Margin/VBox/SelectTiles" instance=ExtResource("2_g52xu")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_knld6")
+tileType = "single_white"
+tileColour = "white"
+
+[node name="SelectCorner" parent="Margin/VBox/SelectTiles" instance=ExtResource("2_g52xu")]
+unique_name_in_owner = true
+layout_mode = 2
+tileType = "corner_white"
+tileColour = "white"
+
+[node name="SelectDouble" parent="Margin/VBox/SelectTiles" instance=ExtResource("2_g52xu")]
+unique_name_in_owner = true
+layout_mode = 2
+tileType = "double_white"
+tileColour = "white"
+
+[node name="SelectTriple" parent="Margin/VBox/SelectTiles" instance=ExtResource("2_g52xu")]
+unique_name_in_owner = true
+layout_mode = 2
+tileType = "triple_white"
+tileColour = "white"
+
+[node name="SelectCross" parent="Margin/VBox/SelectTiles" instance=ExtResource("2_g52xu")]
+unique_name_in_owner = true
+layout_mode = 2
+tileType = "cross_white"
+tileColour = "white"
+
+[node name="QuantityMarkers" type="HBoxContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SingleAmountBar" type="ProgressBar" parent="Margin/VBox/QuantityMarkers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_hd6iy")
+max_value = 16.0
+step = 1.0
+value = 16.0
+show_percentage = false
+
+[node name="SingleQuantity" type="Label" parent="Margin/VBox/QuantityMarkers/SingleAmountBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "16"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CornerAmountBar" type="ProgressBar" parent="Margin/VBox/QuantityMarkers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_hd6iy")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="CornerQuantity" type="Label" parent="Margin/VBox/QuantityMarkers/CornerAmountBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DoubleAmountBar" type="ProgressBar" parent="Margin/VBox/QuantityMarkers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_hd6iy")
+max_value = 8.0
+value = 8.0
+show_percentage = false
+
+[node name="DoubleQuantity" type="Label" parent="Margin/VBox/QuantityMarkers/DoubleAmountBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TripleAmountBar" type="ProgressBar" parent="Margin/VBox/QuantityMarkers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_hd6iy")
+max_value = 8.0
+step = 1.0
+value = 8.0
+show_percentage = false
+
+[node name="TripleQuantity" type="Label" parent="Margin/VBox/QuantityMarkers/TripleAmountBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CrossAmountBar" type="ProgressBar" parent="Margin/VBox/QuantityMarkers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_hd6iy")
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[node name="CrossQuantity" type="Label" parent="Margin/VBox/QuantityMarkers/CrossAmountBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+tooltip_text = "The Number of Cross tiles you have remaining"
+mouse_filter = 1
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,223 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6cfmtxuenmb4"]
+
+[ext_resource type="Script" uid="uid://b78uu8xbifkq4" path="res://src/scripts/chat_panel.gd" id="1_toskc"]
+[ext_resource type="Script" uid="uid://cjp7r1ua0ck7n" path="res://src/scripts/debug.gd" id="2_ff131"]
+[ext_resource type="Theme" uid="uid://bk6ddf3xr8ux2" path="res://src/theme/Default.tres" id="3_58tjl"]
+[ext_resource type="Script" uid="uid://d0g5hm76n45cv" path="res://src/scripts/chat.gd" id="4_od54u"]
+[ext_resource type="PackedScene" uid="uid://dlyc22ad5i535" path="res://src/scenes/ChatMessage.tscn" id="5_ouqoj"]
+[ext_resource type="Script" uid="uid://bgr4dup0ihdyb" path="res://src/scripts/moves.gd" id="6_evr64"]
+[ext_resource type="FontFile" uid="uid://dog0vdro8j474" path="res://src/assets/fonts/roboto/Roboto-Medium.ttf" id="6_ff131"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnqpd"]
+bg_color = Color(0.146329, 0.146329, 0.146329, 1)
+anti_aliasing_size = 0.25
+
+[node name="ChatPanel" type="PanelContainer"]
+offset_right = 356.0
+offset_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnqpd")
+script = ExtResource("1_toskc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="DebugList" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("2_ff131")
+
+[node name="debug_move" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_move_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_move"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = " Move"
+clip_text = true
+
+[node name="debug_white_move" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_white_move_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_white_move"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = " whiteMove"
+clip_text = true
+
+[node name="debug_black_move" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_black_move_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_black_move"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+theme_override_font_sizes/font_size = 14
+text = " blackMove"
+clip_text = true
+
+[node name="debug_player" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_player_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_player"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+theme_override_font_sizes/font_size = 14
+text = " activePlayer"
+clip_text = true
+
+[node name="debug_index" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_index_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_index"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_58tjl")
+theme_override_font_sizes/font_size = 14
+text = " Index"
+clip_text = true
+
+[node name="debug_validSpace" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_validSpace_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_validSpace"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_58tjl")
+text = " is validSpace"
+clip_text = true
+
+[node name="debug_validBoardSpace" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_validBoardSpace_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_validBoardSpace"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = " is validBoardSpace"
+clip_text = true
+
+[node name="debug_holding" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_holding_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_holding"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = " is holding"
+clip_text = true
+
+[node name="debug_tileType" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_tileType_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_tileType"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_58tjl")
+text = " selected tileType"
+clip_text = true
+
+[node name="debug_orientation" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+clip_contents = true
+layout_mode = 2
+
+[node name="debug_orientation_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_orientation"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_58tjl")
+text = " selected orientation"
+clip_text = true
+
+[node name="debug_helperEnabled" type="PanelContainer" parent="VBoxContainer/MarginContainer/DebugList"]
+layout_mode = 2
+
+[node name="debug_helperEnabled_label" type="Label" parent="VBoxContainer/MarginContainer/DebugList/debug_helperEnabled"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = " helperEnabled"
+clip_text = true
+
+[node name="ChatList" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("4_od54u")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/ChatList"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ChatMessages" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ChatList/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ChatMessage" parent="VBoxContainer/MarginContainer/ChatList/ScrollContainer/ChatMessages" instance=ExtResource("5_ouqoj")]
+layout_mode = 2
+
+[node name="ChatInput" type="LineEdit" parent="VBoxContainer/MarginContainer/ChatList"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("3_58tjl")
+theme_override_fonts/font = ExtResource("6_ff131")
+theme_override_font_sizes/font_size = 11
+
+[node name="MoveList" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("6_evr64")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MovesToggleButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = "Move History"
+
+[node name="ChatToggleButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = "Chat"
+
+[node name="DebugToggleButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_58tjl")
+text = "Debug"
+
+[connection signal="text_submitted" from="VBoxContainer/MarginContainer/ChatList/ChatInput" to="VBoxContainer/MarginContainer/ChatList" method="_on_chat_input_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/MovesToggleButton" to="." method="_on_moves_toggle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/ChatToggleButton" to="." method="_on_chat_toggle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/DebugToggleButton" to="." method="_on_debug_toggle_button_pressed"]

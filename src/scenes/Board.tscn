@@ -1,0 +1,1258 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4r2kcimnifk1"]
+
+[ext_resource type="Script" uid="uid://comcjsiewgtmn" path="res://src/scripts/board.gd" id="1_ml4tp"]
+[ext_resource type="PackedScene" uid="uid://cdvilbhcv4jgo" path="res://src/scenes/BoardSpace.tscn" id="2_igt3p"]
+
+[node name="Board" type="PanelContainer"]
+custom_minimum_size = Vector2(576, 576)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -304.0
+offset_right = 288.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ml4tp")
+
+[node name="BoardRows" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="A" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="A1" parent="BoardRows/A" node_paths=PackedStringArray("right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 1
+right = NodePath("../A2")
+bottom = NodePath("../../B/B1")
+
+[node name="A2" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 2
+left = NodePath("../A1")
+right = NodePath("../A3")
+bottom = NodePath("../../B/B2")
+
+[node name="A3" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 3
+left = NodePath("../A2")
+right = NodePath("../A4")
+bottom = NodePath("../../B/B4")
+
+[node name="A4" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 4
+left = NodePath("../A3")
+right = NodePath("../A5")
+bottom = NodePath("../../B/B4")
+
+[node name="A5" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 5
+left = NodePath("../A4")
+right = NodePath("../A6")
+bottom = NodePath("../../B/B5")
+
+[node name="A6" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 6
+left = NodePath("../A5")
+right = NodePath("../A7")
+bottom = NodePath("../../B/B6")
+
+[node name="A7" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 7
+left = NodePath("../A6")
+right = NodePath("../A8")
+bottom = NodePath("../../B/B7")
+
+[node name="A8" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 8
+left = NodePath("../A7")
+right = NodePath("../A9")
+bottom = NodePath("../../B/B8")
+
+[node name="A9" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 9
+left = NodePath("../A8")
+right = NodePath("../A10")
+bottom = NodePath("../../B/B9")
+
+[node name="A10" parent="BoardRows/A" node_paths=PackedStringArray("left", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 10
+left = NodePath("../A9")
+right = NodePath("../A11")
+bottom = NodePath("../../B/B10")
+
+[node name="A11" parent="BoardRows/A" node_paths=PackedStringArray("left", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "A"
+index = 11
+left = NodePath("../A10")
+bottom = NodePath("../../B/B11")
+
+[node name="B" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="B1" parent="BoardRows/B" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 1
+top = NodePath("../../A/A1")
+right = NodePath("../B2")
+bottom = NodePath("../../C/C1")
+
+[node name="B2" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 2
+left = NodePath("../B1")
+top = NodePath("../../A/A2")
+right = NodePath("../B3")
+bottom = NodePath("../../C/C2")
+
+[node name="B3" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 3
+left = NodePath("../B2")
+top = NodePath("../../A/A3")
+right = NodePath("../B4")
+bottom = NodePath("../../C/C3")
+
+[node name="B4" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 4
+left = NodePath("../B3")
+top = NodePath("../../A/A4")
+right = NodePath("../B5")
+bottom = NodePath("../../C/C4")
+
+[node name="B5" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 5
+left = NodePath("../B4")
+top = NodePath("../../A/A5")
+right = NodePath("../B6")
+bottom = NodePath("../../C/C5")
+
+[node name="B6" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 6
+left = NodePath("../B5")
+top = NodePath("../../A/A6")
+right = NodePath("../B7")
+bottom = NodePath("../../C/C6")
+
+[node name="B7" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 7
+left = NodePath("../B6")
+top = NodePath("../../A/A7")
+right = NodePath("../B8")
+bottom = NodePath("../../C/C7")
+
+[node name="B8" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 8
+left = NodePath("../B7")
+top = NodePath("../../A/A8")
+right = NodePath("../B9")
+bottom = NodePath("../../C/C8")
+
+[node name="B9" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 9
+left = NodePath("../B8")
+top = NodePath("../../A/A9")
+right = NodePath("../B10")
+bottom = NodePath("../../C/C9")
+
+[node name="B10" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 10
+left = NodePath("../B9")
+top = NodePath("../../A/A10")
+right = NodePath("../B11")
+bottom = NodePath("../../C/C10")
+
+[node name="B11" parent="BoardRows/B" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "B"
+index = 11
+left = NodePath("../B10")
+top = NodePath("../../A/A11")
+bottom = NodePath("../../C/C11")
+
+[node name="C" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="C1" parent="BoardRows/C" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 1
+top = NodePath("../../B/B1")
+right = NodePath("../C2")
+bottom = NodePath("../../D/D1")
+
+[node name="C2" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 2
+left = NodePath("../C1")
+top = NodePath("../../B/B2")
+right = NodePath("../C3")
+bottom = NodePath("../../D/D2")
+
+[node name="C3" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 3
+left = NodePath("../C2")
+top = NodePath("../../B/B3")
+right = NodePath("../C4")
+bottom = NodePath("../../D/D3")
+
+[node name="C4" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 4
+left = NodePath("../C3")
+top = NodePath("../../B/B4")
+right = NodePath("../C5")
+bottom = NodePath("../../D/D4")
+
+[node name="C5" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 5
+left = NodePath("../C4")
+top = NodePath("../../B/B5")
+right = NodePath("../C6")
+bottom = NodePath("../../D/D5")
+
+[node name="C6" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 6
+left = NodePath("../C5")
+top = NodePath("../../B/B6")
+right = NodePath("../C7")
+bottom = NodePath("../../D/D6")
+
+[node name="C7" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 7
+left = NodePath("../C6")
+top = NodePath("../../B/B7")
+right = NodePath("../C8")
+bottom = NodePath("../../D/D7")
+
+[node name="C8" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 8
+left = NodePath("../C7")
+top = NodePath("../../B/B8")
+right = NodePath("../C9")
+bottom = NodePath("../../D/D8")
+
+[node name="C9" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 9
+left = NodePath("../C8")
+top = NodePath("../../B/B9")
+right = NodePath("../C10")
+bottom = NodePath("../../D/D9")
+
+[node name="C10" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 10
+left = NodePath("../C9")
+top = NodePath("../../B/B10")
+right = NodePath("../C11")
+bottom = NodePath("../../D/D10")
+
+[node name="C11" parent="BoardRows/C" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "C"
+index = 11
+left = NodePath("../C10")
+top = NodePath("../../B/B11")
+bottom = NodePath("../../D/D11")
+
+[node name="D" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="D1" parent="BoardRows/D" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 1
+top = NodePath("../../C/C1")
+right = NodePath("../D2")
+bottom = NodePath("../../E/E1")
+
+[node name="D2" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 2
+left = NodePath("../D1")
+top = NodePath("../../C/C2")
+right = NodePath("../D3")
+bottom = NodePath("../../E/E2")
+
+[node name="D3" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 3
+left = NodePath("../D2")
+top = NodePath("../../C/C3")
+right = NodePath("../D4")
+bottom = NodePath("../../E/E3")
+
+[node name="D4" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 4
+left = NodePath("../D3")
+top = NodePath("../../C/C4")
+right = NodePath("../D5")
+bottom = NodePath("../../E/E4")
+
+[node name="D5" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 5
+left = NodePath("../D4")
+top = NodePath("../../C/C5")
+right = NodePath("../D6")
+bottom = NodePath("../../E/E5")
+
+[node name="D6" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 6
+left = NodePath("../D5")
+top = NodePath("../../C/C6")
+right = NodePath("../D7")
+bottom = NodePath("../../E/E6")
+
+[node name="D7" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 7
+left = NodePath("../D6")
+top = NodePath("../../C/C7")
+right = NodePath("../D8")
+bottom = NodePath("../../E/E7")
+
+[node name="D8" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 8
+left = NodePath("../D7")
+top = NodePath("../../C/C8")
+right = NodePath("../D9")
+bottom = NodePath("../../E/E8")
+
+[node name="D9" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 9
+left = NodePath("../D8")
+top = NodePath("../../C/C9")
+right = NodePath("../D10")
+bottom = NodePath("../../E/E9")
+
+[node name="D10" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 10
+left = NodePath("../D9")
+top = NodePath("../../C/C10")
+right = NodePath("../D11")
+bottom = NodePath("../../E/E10")
+
+[node name="D11" parent="BoardRows/D" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "D"
+index = 11
+left = NodePath("../D10")
+top = NodePath("../../C/C11")
+bottom = NodePath("../../E/E11")
+
+[node name="E" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="E1" parent="BoardRows/E" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 1
+top = NodePath("../../D/D1")
+right = NodePath("../E2")
+bottom = NodePath("../../F/F1")
+
+[node name="E2" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 2
+left = NodePath("../E1")
+top = NodePath("../../D/D2")
+right = NodePath("../E3")
+bottom = NodePath("../../F/F2")
+
+[node name="E3" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 3
+left = NodePath("../E2")
+top = NodePath("../../D/D3")
+right = NodePath("../E4")
+bottom = NodePath("../../F/F3")
+
+[node name="E4" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 4
+left = NodePath("../E3")
+top = NodePath("../../D/D4")
+right = NodePath("../E5")
+bottom = NodePath("../../F/F4")
+
+[node name="E5" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 5
+left = NodePath("../E4")
+top = NodePath("../../D/D5")
+right = NodePath("../E6")
+bottom = NodePath("../../F/F5")
+
+[node name="E6" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 6
+left = NodePath("../E5")
+top = NodePath("../../D/D6")
+right = NodePath("../E7")
+bottom = NodePath("../../F/F6")
+
+[node name="E7" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 7
+left = NodePath("../E6")
+top = NodePath("../../D/D7")
+right = NodePath("../E8")
+bottom = NodePath("../../F/F7")
+
+[node name="E8" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 8
+left = NodePath("../E7")
+top = NodePath("../../D/D8")
+right = NodePath("../E9")
+bottom = NodePath("../../F/F8")
+
+[node name="E9" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 9
+left = NodePath("../E8")
+top = NodePath("../../D/D9")
+right = NodePath("../E10")
+bottom = NodePath("../../F/F9")
+
+[node name="E10" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 10
+left = NodePath("../E9")
+top = NodePath("../../D/D10")
+right = NodePath("../E11")
+bottom = NodePath("../../F/F10")
+
+[node name="E11" parent="BoardRows/E" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "E"
+index = 11
+left = NodePath("../E10")
+top = NodePath("../../D/D11")
+bottom = NodePath("../../F/F11")
+
+[node name="F" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="F1" parent="BoardRows/F" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 1
+top = NodePath("../../E/E1")
+right = NodePath("../F2")
+bottom = NodePath("../../G/G1")
+
+[node name="F2" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 2
+left = NodePath("../F1")
+top = NodePath("../../E/E2")
+right = NodePath("../F3")
+bottom = NodePath("../../G/G2")
+
+[node name="F3" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 3
+left = NodePath("../F2")
+top = NodePath("../../E/E3")
+right = NodePath("../F4")
+bottom = NodePath("../../G/G3")
+
+[node name="F4" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 4
+left = NodePath("../F3")
+top = NodePath("../../E/E4")
+right = NodePath("../F5")
+bottom = NodePath("../../G/G4")
+
+[node name="F5" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 5
+left = NodePath("../F4")
+top = NodePath("../../E/E5")
+right = NodePath("../F6")
+bottom = NodePath("../../G/G5")
+
+[node name="F6" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 6
+left = NodePath("../F5")
+top = NodePath("../../E/E6")
+right = NodePath("../F7")
+bottom = NodePath("../../G/G6")
+
+[node name="F7" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 7
+left = NodePath("../F6")
+top = NodePath("../../E/E7")
+right = NodePath("../F8")
+bottom = NodePath("../../G/G7")
+
+[node name="F8" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 8
+left = NodePath("../F7")
+top = NodePath("../../E/E8")
+right = NodePath("../F9")
+bottom = NodePath("../../G/G8")
+
+[node name="F9" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 9
+left = NodePath("../F8")
+top = NodePath("../../E/E9")
+right = NodePath("../F10")
+bottom = NodePath("../../G/G9")
+
+[node name="F10" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 10
+left = NodePath("../F9")
+top = NodePath("../../E/E10")
+right = NodePath("../F11")
+bottom = NodePath("../../G/G10")
+
+[node name="F11" parent="BoardRows/F" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "F"
+index = 11
+left = NodePath("../F10")
+top = NodePath("../../E/E11")
+bottom = NodePath("../../G/G11")
+
+[node name="G" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="G1" parent="BoardRows/G" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 1
+top = NodePath("../../F/F1")
+right = NodePath("../G2")
+bottom = NodePath("../../H/H1")
+
+[node name="G2" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 2
+left = NodePath("../G1")
+top = NodePath("../../F/F2")
+right = NodePath("../G3")
+bottom = NodePath("../../H/H2")
+
+[node name="G3" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 3
+left = NodePath("../G2")
+top = NodePath("../../F/F3")
+right = NodePath("../G4")
+bottom = NodePath("../../H/H3")
+
+[node name="G4" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 4
+left = NodePath("../G3")
+top = NodePath("../../F/F4")
+right = NodePath("../G5")
+bottom = NodePath("../../H/H4")
+
+[node name="G5" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 5
+left = NodePath("../G4")
+top = NodePath("../../F/F5")
+right = NodePath("../G6")
+bottom = NodePath("../../H/H5")
+
+[node name="G6" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 6
+left = NodePath("../G5")
+top = NodePath("../../F/F6")
+right = NodePath("../G7")
+bottom = NodePath("../../H/H6")
+
+[node name="G7" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 7
+left = NodePath("../G6")
+top = NodePath("../../F/F7")
+right = NodePath("../G8")
+bottom = NodePath("../../H/H7")
+
+[node name="G8" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 8
+left = NodePath("../G7")
+top = NodePath("../../F/F8")
+right = NodePath("../G9")
+bottom = NodePath("../../H/H8")
+
+[node name="G9" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 9
+left = NodePath("../G8")
+top = NodePath("../../F/F9")
+right = NodePath("../G10")
+bottom = NodePath("../../H/H9")
+
+[node name="G10" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 10
+left = NodePath("../G9")
+top = NodePath("../../F/F10")
+right = NodePath("../G11")
+bottom = NodePath("../../H/H10")
+
+[node name="G11" parent="BoardRows/G" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "G"
+index = 11
+left = NodePath("../G10")
+top = NodePath("../../F/F11")
+bottom = NodePath("../../H/H11")
+
+[node name="H" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="H1" parent="BoardRows/H" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 1
+top = NodePath("../../G/G1")
+right = NodePath("../H2")
+bottom = NodePath("../../I/I1")
+
+[node name="H2" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 2
+left = NodePath("../H1")
+top = NodePath("../../G/G2")
+right = NodePath("../H3")
+bottom = NodePath("../../I/I2")
+
+[node name="H3" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 3
+left = NodePath("../H2")
+top = NodePath("../../G/G3")
+right = NodePath("../H4")
+bottom = NodePath("../../I/I3")
+
+[node name="H4" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 4
+left = NodePath("../H3")
+top = NodePath("../../G/G4")
+right = NodePath("../H5")
+bottom = NodePath("../../I/I4")
+
+[node name="H5" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 5
+left = NodePath("../H4")
+top = NodePath("../../G/G5")
+right = NodePath("../H6")
+bottom = NodePath("../../I/I5")
+
+[node name="H6" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 6
+left = NodePath("../H5")
+top = NodePath("../../G/G6")
+right = NodePath("../H7")
+bottom = NodePath("../../I/I6")
+
+[node name="H7" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 7
+left = NodePath("../H6")
+top = NodePath("../../G/G7")
+right = NodePath("../H8")
+bottom = NodePath("../../I/I7")
+
+[node name="H8" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 8
+left = NodePath("../H7")
+top = NodePath("../../G/G8")
+right = NodePath("../H9")
+bottom = NodePath("../../I/I8")
+
+[node name="H9" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 9
+left = NodePath("../H8")
+top = NodePath("../../G/G9")
+right = NodePath("../H10")
+bottom = NodePath("../../I/I9")
+
+[node name="H10" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 10
+left = NodePath("../H9")
+top = NodePath("../../G/G10")
+right = NodePath("../H11")
+bottom = NodePath("../../I/I10")
+
+[node name="H11" parent="BoardRows/H" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "H"
+index = 11
+left = NodePath("../H10")
+top = NodePath("../../G/G11")
+bottom = NodePath("../../I/I11")
+
+[node name="I" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="I1" parent="BoardRows/I" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 1
+top = NodePath("../../H/H1")
+right = NodePath("../I2")
+bottom = NodePath("../../J/J1")
+
+[node name="I2" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 2
+left = NodePath("../I1")
+top = NodePath("../../H/H2")
+right = NodePath("../I3")
+bottom = NodePath("../../J/J2")
+
+[node name="I3" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 3
+left = NodePath("../I2")
+top = NodePath("../../H/H3")
+right = NodePath("../I4")
+bottom = NodePath("../../J/J3")
+
+[node name="I4" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 4
+left = NodePath("../I3")
+top = NodePath("../../H/H4")
+right = NodePath("../I5")
+bottom = NodePath("../../J/J4")
+
+[node name="I5" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 5
+left = NodePath("../I4")
+top = NodePath("../../H/H5")
+right = NodePath("../I6")
+bottom = NodePath("../../J/J5")
+
+[node name="I6" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 6
+left = NodePath("../I5")
+top = NodePath("../../H/H6")
+right = NodePath("../I7")
+bottom = NodePath("../../J/J6")
+
+[node name="I7" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 7
+left = NodePath("../I6")
+top = NodePath("../../H/H7")
+right = NodePath("../I8")
+bottom = NodePath("../../J/J7")
+
+[node name="I8" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 8
+left = NodePath("../I7")
+top = NodePath("../../H/H8")
+right = NodePath("../I9")
+bottom = NodePath("../../J/J8")
+
+[node name="I9" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 9
+left = NodePath("../I8")
+top = NodePath("../../H/H9")
+right = NodePath("../I10")
+bottom = NodePath("../../J/J9")
+
+[node name="I10" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 10
+left = NodePath("../I9")
+top = NodePath("../../H/H10")
+right = NodePath("../I11")
+bottom = NodePath("../../J/J10")
+
+[node name="I11" parent="BoardRows/I" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "I"
+index = 11
+left = NodePath("../I10")
+top = NodePath("../../H/H11")
+bottom = NodePath("../../J/J11")
+
+[node name="J" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="J1" parent="BoardRows/J" node_paths=PackedStringArray("top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 1
+top = NodePath("../../I/I1")
+right = NodePath("../J2")
+bottom = NodePath("../../K/K1")
+
+[node name="J2" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 2
+left = NodePath("../J1")
+top = NodePath("../../I/I2")
+right = NodePath("../J3")
+bottom = NodePath("../../K/K2")
+
+[node name="J3" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 3
+left = NodePath("../J2")
+top = NodePath("../../I/I3")
+right = NodePath("../J4")
+bottom = NodePath("../../K/K3")
+
+[node name="J4" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 4
+left = NodePath("../J3")
+top = NodePath("../../I/I4")
+right = NodePath("../J5")
+bottom = NodePath("../../K/K4")
+
+[node name="J5" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 5
+left = NodePath("../J4")
+top = NodePath("../../I/I5")
+right = NodePath("../J6")
+bottom = NodePath("../../K/K5")
+
+[node name="J6" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 6
+left = NodePath("../J5")
+top = NodePath("../../I/I6")
+right = NodePath("../J7")
+bottom = NodePath("../../K/K6")
+
+[node name="J7" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 7
+left = NodePath("../J6")
+top = NodePath("../../I/I7")
+right = NodePath("../J8")
+bottom = NodePath("../../K/K7")
+
+[node name="J8" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 8
+left = NodePath("../J7")
+top = NodePath("../../I/I8")
+right = NodePath("../J9")
+bottom = NodePath("../../K/K8")
+
+[node name="J9" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 9
+left = NodePath("../J8")
+top = NodePath("../../I/I9")
+right = NodePath("../J10")
+bottom = NodePath("../../K/K9")
+
+[node name="J10" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "right", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 10
+left = NodePath("../J9")
+top = NodePath("../../I/I10")
+right = NodePath("../J11")
+bottom = NodePath("../../K/K10")
+
+[node name="J11" parent="BoardRows/J" node_paths=PackedStringArray("left", "top", "bottom") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "J"
+index = 11
+left = NodePath("../J10")
+top = NodePath("../../I/I11")
+bottom = NodePath("../../K/K11")
+
+[node name="K" type="HBoxContainer" parent="BoardRows"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="K1" parent="BoardRows/K" node_paths=PackedStringArray("top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 1
+top = NodePath("../../J/J1")
+right = NodePath("../K2")
+
+[node name="K2" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 2
+left = NodePath("../K1")
+top = NodePath("../../J/J2")
+right = NodePath("../K3")
+
+[node name="K3" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 3
+left = NodePath("../K2")
+top = NodePath("../../J/J3")
+right = NodePath("../K4")
+
+[node name="K4" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 4
+left = NodePath("../K3")
+top = NodePath("../../J/J4")
+right = NodePath("../K5")
+
+[node name="K5" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 5
+left = NodePath("../K4")
+top = NodePath("../../J/J5")
+right = NodePath("../K6")
+
+[node name="K6" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 6
+left = NodePath("../K5")
+top = NodePath("../../J/J6")
+right = NodePath("../K7")
+
+[node name="K7" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 7
+left = NodePath("../K6")
+top = NodePath("../../J/J7")
+right = NodePath("../K8")
+
+[node name="K8" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 8
+left = NodePath("../K7")
+top = NodePath("../../J/J8")
+right = NodePath("../K9")
+
+[node name="K9" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 9
+left = NodePath("../K8")
+top = NodePath("../../J/J9")
+right = NodePath("../K10")
+
+[node name="K10" parent="BoardRows/K" node_paths=PackedStringArray("left", "top", "right") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 10
+left = NodePath("../K9")
+top = NodePath("../../J/J10")
+right = NodePath("../K11")
+
+[node name="K11" parent="BoardRows/K" node_paths=PackedStringArray("left", "top") instance=ExtResource("2_igt3p")]
+unique_name_in_owner = true
+layout_mode = 2
+row = "K"
+index = 11
+left = NodePath("../K10")
+top = NodePath("../../J/J11")

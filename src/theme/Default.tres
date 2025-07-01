@@ -1,0 +1,56 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bk6ddf3xr8ux2"]
+
+[ext_resource type="FontFile" uid="uid://dog0vdro8j474" path="res://src/assets/fonts/roboto/Roboto-Medium.ttf" id="1_23b0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d376q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.365, 0.365, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxp3l"]
+bg_color = Color(0.138282, 0.138282, 0.138282, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing_size = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23b0r"]
+bg_color = Color(0, 0.64583, 0.515885, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing_size = 0.2
+
+[resource]
+default_font_size = 12
+Button/fonts/font = ExtResource("1_23b0r")
+ChatLabel/base_type = &"Label"
+ChatLabel/colors/font_color = Color(0, 0, 0, 1)
+ChatLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+ChatLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+ChatLabel/constants/line_spacing = 0
+ChatLabel/constants/outline_size = 0
+ChatLabel/constants/shadow_offset_x = 0
+ChatLabel/constants/shadow_offset_y = 0
+ChatLabel/constants/shadow_outline_size = 0
+ChatLabel/font_sizes/font_size = 14
+ChatLabel/fonts/font = ExtResource("1_23b0r")
+ChatLabel/styles/normal = SubResource("StyleBoxFlat_d376q")
+Label/fonts/font = ExtResource("1_23b0r")
+LeftPanelButton/base_type = &"PanelContainer"
+LeftPanelButton/styles/panel = SubResource("StyleBoxFlat_d376q")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_rxp3l")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_23b0r")

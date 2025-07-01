@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy7g4aacnhgj6"]
+
+[ext_resource type="Script" uid="uid://br0cje84a71w6" path="res://src/scripts/profile_panel.gd" id="1_73ia5"]
+[ext_resource type="StyleBox" uid="uid://bkumipkqf6m1r" path="res://src/theme/ProfilePanel.tres" id="2_hjayj"]
+[ext_resource type="Theme" uid="uid://bk6ddf3xr8ux2" path="res://src/theme/Default.tres" id="2_irxi3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjayj"]
+bg_color = Color(0.48795, 0.400351, 3.85046e-07, 1)
+border_width_top = 1
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing_size = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irxi3"]
+bg_color = Color(0.242, 0.242, 0.242, 0.5)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing_size = 0.2
+
+[node name="BotProfilePanel" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_hjayj")
+script = ExtResource("1_73ia5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="PlayerNamePanel" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_hjayj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/PlayerNamePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 1
+
+[node name="PlayerName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/PlayerNamePanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_irxi3")
+theme_override_font_sizes/font_size = 12
+text = "Your Name"
+vertical_alignment = 1
+
+[node name="PlayerRatingPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_hjayj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/PlayerRatingPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 1
+
+[node name="PlayerRating" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/PlayerRatingPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_irxi3")
+theme_override_font_sizes/font_size = 12
+text = "Rating: 1200"
+
+[node name="PlayerTimerPanel" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_styles/panel = ExtResource("2_hjayj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PlayerTimerPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 1
+
+[node name="PlayerTimer" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PlayerTimerPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_irxi3")
+theme_override_font_sizes/font_size = 12
+text = "3:00"
+horizontal_alignment = 1
+
+[node name="ProfilePicturePanel" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_irxi3")
+
+[node name="ProfilePicture" type="TextureRect" parent="MarginContainer/HBoxContainer/ProfilePicturePanel"]
+unique_name_in_owner = true
+layout_mode = 2

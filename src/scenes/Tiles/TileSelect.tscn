@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxk0rh0s1wb4b"]
+
+[ext_resource type="Script" uid="uid://ccwv3hjd0mck1" path="res://src/scripts/tile_select.gd" id="1_v0lt8"]
+[ext_resource type="Texture2D" path="res://Assets/Tiles/single.jpg" id="2_55ay3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2vyl"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing_size = 0.3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oppso"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.377045, 0.913093, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing_size = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0lt8"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(8.18223e-06, 0.963267, 0.294772, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing_size = 0.2
+
+[node name="TileSelect" type="PanelContainer"]
+clip_children = 1
+texture_filter = 3
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_t2vyl")
+script = ExtResource("1_v0lt8")
+
+[node name="TileSelectTexture" type="TextureRect" parent="."]
+texture_filter = 3
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_55ay3")
+expand_mode = 1
+
+[node name="WhiteOutline" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oppso")
+
+[node name="GreenOutline" type="PanelContainer" parent="."]
+visible = false
+texture_filter = 3
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0lt8")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

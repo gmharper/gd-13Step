@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://be7cuamfgynw7"]
+
+[ext_resource type="Script" uid="uid://b55hjb0n1drsj" path="res://src/scripts/player_panel.gd" id="1_bs356"]
+[ext_resource type="PackedScene" uid="uid://dsew0gujmey2b" path="res://src/scenes/TilePanel.tscn" id="2_q436l"]
+[ext_resource type="PackedScene" uid="uid://dy7g4aacnhgj6" path="res://src/scenes/ProfilePanel.tscn" id="3_u02m7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo6dc"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+anti_aliasing_size = 0.3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb067"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+anti_aliasing_size = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnpkq"]
+bg_color = Color(0.11798, 0.11798, 0.11798, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+anti_aliasing_size = 0.2
+
+[node name="PlayerPanel" type="PanelContainer"]
+offset_right = 370.0
+offset_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 10
+script = ExtResource("1_bs356")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TileDropdown" type="PanelContainer" parent="VBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bo6dc")
+
+[node name="TileDropdownLabel" type="Label" parent="VBox/TileDropdown"]
+layout_mode = 2
+text = "^"
+horizontal_alignment = 1
+
+[node name="Border" type="PanelContainer" parent="VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yb067")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/Border"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TilePanel" parent="VBox/Border/VBoxContainer" instance=ExtResource("2_q436l")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xnpkq")
+
+[node name="ProfilePanel" parent="VBox/Border/VBoxContainer" instance=ExtResource("3_u02m7")]
+unique_name_in_owner = true
+layout_mode = 2
